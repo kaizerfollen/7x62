@@ -1,36 +1,69 @@
-<template>
-  <v-app>
-    <v-app-bar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
-    </v-app-bar>
+<template lang="pug">
+  v-app#inspire
+    v-navigation-drawer(
+      v-model='drawer' app='' clipped=''
+    )
+      v-list(
+        dense=''
+      )
+        router-link(
+          to="/"
+          tag="span"
+        )
+          v-list-item(
+            @click=''
+          )
+            v-list-item-action
+              v-icon mdi-earth
+            v-list-item-content
+              v-list-item-title Home
+        router-link(
+          to="/aboutMe"
+          tag='span'
+        )
+          v-list-item(
+            @click=''
+          )
+            v-list-item-action
+              v-icon mdi-account
+            v-list-item-content
+              v-list-item-title About me
+    v-app-bar(
+      app=''
+      clipped-left=''
+    )
+      v-app-bar-nav-icon(
+        @click.stop='drawer = !drawer'
+      )
+      v-toolbar-title Application
 
-    <v-content>
-      <HelloWorld/>
-    </v-content>
-  </v-app>
+    v-content
+      router-view
+
+    v-footer(
+      app=''
+    )
+      router-link(
+        tag="p"
+        to="https://www.instagram.com/7x62/"
+      )
+      span &copy; 2019
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld,
+  props: {
+    source: String
   },
+
   data: () => ({
-    //
+    drawer: null
   }),
-};
+
+  created () {
+    this.$vuetify.theme.dark = true
+  }
+}
+
 </script>
