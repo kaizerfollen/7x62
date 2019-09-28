@@ -5,7 +5,7 @@
       name="fade"
       tag="div"
     )
-      div(
+      div.slider(
         v-for="(item, index) in [currentIndex]"
         :key="item"
       )
@@ -31,16 +31,17 @@ export default {
   data: () => {
     return {
       img: [
-        '/static/img/1.jpg',
-        '/static/img/2.jpg',
-        '/static/img/3.jpg',
-        '/static/img/4.jpg'
+        'static/img/1.jpg',
+        'static/img/2.jpg',
+        'static/img/3.jpg',
+        'static/img/4.jpg'
       ],
       timer: null,
       currentIndex: 0
     }
   },
   mounted () {
+    this.$store.dispatch('initWeather')
     this.startSlider()
   },
   computed: {
@@ -63,6 +64,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.slier
+  height 80vh
+  overflow hidden
 .fade-enter-active, .fade-leave-active
   transition all .9s ease
   overflow hidden
@@ -77,13 +81,13 @@ export default {
   opacity 0
 
 img
-  height 600px
+  height 80vh
   width 100%
 
 .next, .prew
   cursor pointer
   position absolute
-  top 40%
+  top 50%
   width auto
   padding 16px
   color #fff
