@@ -7,7 +7,7 @@
         <span class="movie-year">{{ movie.Year }}</span>
       </div>
       <div class="movie-item-controls row no-gutters">
-        <div class="col pr-2">
+        <div class="col-12">
           <b-button
             size="md"
             block
@@ -17,7 +17,7 @@
             Info
           </b-button>
         </div>
-        <div class="col pl-2">
+        <div class="col-12">
           <b-button
             size="md"
             block
