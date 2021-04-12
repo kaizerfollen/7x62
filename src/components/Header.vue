@@ -1,18 +1,19 @@
 <template>
   <header class="header">
-    <BNavbar type="dark" class="navbar" variant="dark">
-      <BContainer>
-        <BNavbarBrand href="#">MovieDB</BNavbarBrand>
-        <BNavForm>
-          <BFormInput
+    <b-navbar type="dark" class="navbar" variant="dark">
+      <b-container fluid>
+        <b-navbar-brand href="#">MovieDB</b-navbar-brand>
+        <b-nav-form>
+          <b-form-input
             class="mr-sm-2 search-input"
             placeholder="Search"
             v-model="searchValue"
             debounce="500"
-          ></BFormInput>
-        </BNavForm>
-      </BContainer>
-    </BNavbar>
+          >
+          </b-form-input>
+        </b-nav-form>
+      </b-container>
+    </b-navbar>
   </header>
 </template>
 

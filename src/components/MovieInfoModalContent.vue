@@ -2,18 +2,18 @@
   <div class="movie-info-wrap">
     <header class="movie-info-header">
       <h6 class="movie-header-title">Movie view</h6>
-      <BIconX class="close-icon" @click="closeModal" />
+      <b-icon-x class="close-icon" @click="closeModal" />
     </header>
     <div class="movie-info-content">
-      <BRow>
-        <BCol sm="4">
+      <b-row>
+        <b-col sm="4">
           <div class="movie-poster-wrap">
             <div class="movie-poster" :style="posterStyle"></div>
           </div>
-        </BCol>
-        <BCol sm="8">
+        </b-col>
+        <b-col sm="8">
           <h3 class="movie-title">{{ movie.Title }}</h3>
-          <BFormRating
+          <b-form-rating
             class="movie-rating"
             v-model="movie.imdbRating"
             readonly
@@ -25,10 +25,14 @@
           />
           <p class="movie-description">{{ movie.Plot }}</p>
           <div class="mt-3 mb-4">
-            <BBadge variant="success" class="mr-2">{{ movie.Year }}</BBadge>
-            <BBadge variant="success" class="mr-2">{{ movie.Runtime }}</BBadge>
-            <BBadge variant="success" class="mr-2">{{ movie.Genre }}</BBadge>
-            <BBadge variant="success" class="mr-2">{{ movie.Language }}</BBadge>
+            <b-badge variant="success" class="mr-2">{{ movie.Year }}</b-badge>
+            <b-badge variant="success" class="mr-2">
+              {{ movie.Runtime }}
+            </b-badge>
+            <b-badge variant="success" class="mr-2">{{ movie.Genre }}</b-badge>
+            <b-badge variant="success" class="mr-2">
+              {{ movie.Language }}
+            </b-badge>
           </div>
           <table class="table small">
             <tbody>
@@ -58,8 +62,8 @@
               </tr>
             </tbody>
           </table>
-        </BCol>
-      </BRow>
+        </b-col>
+      </b-row>
     </div>
   </div>
 </template>

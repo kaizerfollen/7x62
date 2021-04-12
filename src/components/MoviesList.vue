@@ -1,34 +1,34 @@
 <template>
-  <BContainer>
+  <b-container fluid>
     <h3 class="list-title">{{ listTitle }}</h3>
-    <BRow>
+    <b-row>
       <template v-if="isExist">
-        <BCol cols="3" v-for="(movie, key) in list" :key="key">
-          <MovieItem
+        <b-col cols="2" v-for="(movie, key) in list" :key="key">
+          <movie-item
             :movie="movie"
             @mouseover.native="onMouseOver(movie.Poster)"
             @removeItem="onRemoveItem"
             @showModal="onShowMovieInfo"
           />
-        </BCol>
+        </b-col>
       </template>
       <template v-else>
         <div>Empty list</div>
       </template>
-    </BRow>
-    <BModal
+    </b-row>
+    <b-modal
       body-class="movie-modal-body"
       :id="movieInfoModalID"
       size="xl"
       hide-footer
       hide-header
     >
-      <MovieInfoModalContent
+      <movie-info-modal-content
         :movie="selectedMovie"
         @closeModal="onCloseModal"
       />
-    </BModal>
-  </BContainer>
+    </b-modal>
+  </b-container>
 </template>
 
 <script>

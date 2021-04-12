@@ -8,22 +8,24 @@
       </div>
       <div class="movie-item-controls row no-gutters">
         <div class="col pr-2">
-          <BButton
+          <b-button
             size="md"
             block
             variant="outline-light"
             @click="showInfoModalEvent"
-            >Info</BButton
           >
+            Info
+          </b-button>
         </div>
         <div class="col pl-2">
-          <BButton
+          <b-button
             size="md"
             block
             variant="outline-light"
             @click="emitRemoveEvent"
-            >Remove</BButton
           >
+            Remove
+          </b-button>
         </div>
       </div>
     </div>

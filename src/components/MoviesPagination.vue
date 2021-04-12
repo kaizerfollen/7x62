@@ -1,6 +1,6 @@
 <template>
   <div class="movies-pagination d-flex justify-content-center">
-    <BPagination
+    <b-pagination
       v-model="currentPageModel"
       :per-page="perPage"
       :total-rows="total"
